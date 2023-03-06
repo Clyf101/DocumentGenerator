@@ -8,11 +8,17 @@ const questions = [
     type: 'input',
     name: 'title',
     message: 'What is the title of your project?',
+    validate: function (input) {
+      return input.length > 0 ? true : 'Please enter a valid title.';
+    },
   },
   {
     type: 'input',
     name: 'description',
     message: 'Please provide a description of your project:',
+    validate: function (input) {
+      return input.length > 0 ? true : 'Please enter a valid description.';
+    },
   },
   {
     type: 'input',
@@ -44,16 +50,38 @@ const questions = [
     type: 'input',
     name: 'github',
     message: 'What is your GitHub username?',
+    validate: function (input) {
+      return input.length > 0 ? true : 'Please enter a valid GitHub username.';
+    },
   },
   {
     type: 'input',
     name: 'email',
     message: 'What is your email address?',
+    validate: function (input) {
+      return /\S+@\S+\.\S+/.test(input) ? true : 'Please enter a valid email address.';
+    },
   },
 ];
+function getLicenseText(license) {
+  switch (license) {
+    case 'MIT':
+      return 'Licensed under the MIT license.';
+    case 'GNU GPLv3':
+      return 'Licensed under the GNU GPLv3 license.';
+    case 'Apache License 2.0':
+      return 'Licensed under the Apache License 2.0.';
+    case 'ISC':
+      return 'Licensed under the ISC license.';
+    default:
+      return '';
+  }
+}
+
 
 // function to generate README
 function generateREADME(answers, userData) {
+  const licenseText = getLicenseText(answers.license);
   return `
 # ${answers.title}
 
@@ -75,8 +103,7 @@ ${answers.installation}
 ${answers.usage}
 
 ## License
-[![License: ${answers.license}](https://img.shields.io/badge/License-${answers.license}-yellow.svg)](https://opensource.org/licenses/${answers.license})
-This project is licensed under the ${answers.license} license.
+${licenseText}
 
 ## Contributing
 ${answers.contributing}
@@ -88,6 +115,7 @@ ${answers.tests}
 If you have any questions about the repo, please open an issue or contact me directly at ${answers.email}. You can find more of my work at [${userData.login}](${userData.html_url}).
 `;
 }
+
 
 // function to initialize program
 function init() {
@@ -110,6 +138,5 @@ function init() {
     })
     .catch((error) => console.error(error));
 }
-
-// call init function to start program
 init();
+
