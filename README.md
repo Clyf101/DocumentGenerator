@@ -25,7 +25,7 @@ Licensed under the MIT license.
 Contributions are welcome! To contribute to this project, please fork the repository and submit a pull request.
 
 ## Demo Link
-https://drive.google.com/file/d/1y-8LbPnS0ltX6GdKERoRZ_Rc0D8Yfbwh/view
+https://drive.google.com/open?id=1V8jcBxipHrfSmgy-wHc0p3uvXnKhNF8m&authuser=0
 
 ## Questions
 If you have any questions about the repo, please open an issue or contact me directly at hclyford@gmail.com. You can find more of my work at [Clyf101](https://github.com/Clyf101).
