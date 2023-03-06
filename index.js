@@ -43,8 +43,8 @@ const questions = [
   },
   {
     type: 'input',
-    name: 'tests',
-    message: 'Please provide testing instructions for your project:',
+    name: 'demo',
+    message: 'live video of how the this project work',
   },
   {
     type: 'input',
@@ -93,7 +93,7 @@ ${answers.description}
 - [Usage](#usage)
 - [License](#license)
 - [Contributing](#contributing)
-- [Tests](#tests)
+- [Demo](#demo)
 - [Questions](#questions)
 
 ## Installation
@@ -108,8 +108,8 @@ ${licenseText}
 ## Contributing
 ${answers.contributing}
 
-## Tests
-${answers.tests}
+## Demo Link
+${answers.demo}
 
 ## Questions
 If you have any questions about the repo, please open an issue or contact me directly at ${answers.email}. You can find more of my work at [${userData.login}](${userData.html_url}).
